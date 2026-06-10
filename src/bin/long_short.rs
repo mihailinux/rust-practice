@@ -17,7 +17,7 @@ enum Length {
     Short,
     Long
 }
-
+//ex3_1_v2 de la async are ceva asemanator
 static CHANNEL: Channel<ThreadModeRawMutex, Length, 64> = Channel::new();
 
 

@@ -10,8 +10,6 @@ use panic_probe as _;
 use embassy_sync::signal::Signal;
 use embassy_sync::blocking_mutex::raw::CriticalSectionRawMutex;
 
-
-
 static SIG: Signal<CriticalSectionRawMutex, bool> = Signal::new();
 
 #[embassy_executor::task]
@@ -41,6 +39,7 @@ async fn counter_task(mut led1: Output<'static>, mut led2: Output<'static>, mut 
         Timer::after_secs(1).await;
     }
 }
+
 #[embassy_executor::main]
 async fn main(spawner: Spawner) {
     let peripherals = embassy_stm32::init(Default::default());
